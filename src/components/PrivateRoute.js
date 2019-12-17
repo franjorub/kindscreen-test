@@ -3,11 +3,11 @@ import { Route, Redirect } from "react-router-dom";
 import { useAuth } from "../contexts/auth";
 
 export const PrivateRoute = ({ component: Component, ...rest }) => {
-  const isAuthenticated = useAuth();
+  const { loggedUser } = useAuth();
 
   const render = useCallback(
-    props => (isAuthenticated ? <Component {...props} /> : <Redirect to="/" />),
-    [isAuthenticated]
+    props => (loggedUser ? <Component {...props} /> : <Redirect to="/" />),
+    [loggedUser]
   );
 
   return <Route {...rest} render={render} />;
