@@ -18,27 +18,38 @@ const Form = styled.div`
 
 const Input = styled.input`
   padding: 1rem;
-  border: 1px solid #999;
+  border-top: transparent !important;
+  border-left: transparent !important;
+  border-right: transparent !important;
+  border-bottom: 1px solid white;
+  box-shadow: none !important;
   margin-bottom: 1rem;
   font-size: 0.8rem;
+  background-color: transparent;
+  outline: none;
+  &::placeholder {
+    color: white;
+  }
 `;
 
 const Button = styled.button`
   background-color: white;
-  border-radius: 3px;
-  padding: 1rem;
+  border-radius: 6px;
   color: #49a2e1;
   font-weight: 600;
   width: 84px;
-  height: 30px;
+  height: 32px;
+  padding-top: auto;
+  padding-bottom: auto;
   text-align: center;
   margin-bottom: 1rem;
   font-size: 0.8rem;
+  border: none;
 `;
 
-const Logo = styled.img`
-  width: 50%;
-  margin-bottom: 1rem;
+const Logo = styled.h1`
+  color: white;
+  text-align: center;
 `;
 
 const Error = styled.div`
