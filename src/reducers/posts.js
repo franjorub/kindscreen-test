@@ -18,26 +18,7 @@ export const postReducer = (state, action) => {
       };
     case actionTypes.LOADING_POSTS:
       return { ...state, loading: true };
-    case actionTypes.STARRED_POST:
-      const post = { ...state.entities[action.payload] };
-      post.isStarred = true;
-      return {
-        ...state,
-        entities: {
-          ...state.entities,
-          [action.payload]: post
-        }
-      };
-    case actionTypes.UNSTARRED_POST:
-      const postCopy = { ...state.entities[action.payload] };
-      postCopy.isStarred = false;
-      return {
-        ...state,
-        entities: {
-          ...state.entities,
-          [action.payload]: postCopy
-        }
-      };
+
     default:
       throw new Error();
   }

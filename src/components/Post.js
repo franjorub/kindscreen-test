@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   Row,
@@ -13,6 +13,7 @@ import {
 import styled from "styled-components";
 import { usePosts } from "../contexts/posts";
 import { starredPost, unStarredPost } from "../actions/posts";
+import { useStarredPosts } from "../contexts/starredPosts";
 
 const CustomContainer = styled(Container)`
   margin-bottom: 12px;
@@ -31,15 +32,21 @@ const CustomLink = styled(Link)`
 `;
 
 export const Post = ({ id, showStarred }) => {
-  const [posts, dispatchToPosts] = usePosts();
+  const [posts] = usePosts();
+  const [starredPosts, dispatchToStarredPosts] = useStarredPosts();
 
   const post = { ...posts.entities[id] };
 
+  post.isStarred = useMemo(
+    () => Boolean(starredPosts.find(key => key === id)),
+    [id, starredPosts]
+  );
+
   const handleStarred = () => {
     if (post.isStarred) {
-      dispatchToPosts(unStarredPost(id));
+      dispatchToStarredPosts(unStarredPost(id));
     } else {
-      dispatchToPosts(starredPost(id));
+      dispatchToStarredPosts(starredPost(id));
     }
   };
 

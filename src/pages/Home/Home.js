@@ -16,11 +16,13 @@ import { useAuth } from "../../contexts/auth";
 import client from "../../api/client";
 import { usePosts } from "../../contexts/posts";
 import { fetchPostSuccess, loadingPosts } from "../../actions/posts";
+import { useStarredPosts } from "../../contexts/starredPosts";
 
 export const Home = () => {
   const [activeTab, setActiveTab] = useState("1");
   const { loggedUser, authUser } = useAuth();
   const [posts, dispatchToPosts] = usePosts();
+  const [starredPosts] = useStarredPosts();
 
   const toggle = tab => {
     if (activeTab !== tab) setActiveTab(tab);
@@ -29,11 +31,6 @@ export const Home = () => {
   const handleLoggout = () => {
     authUser(null);
   };
-
-  const starredPosts = useMemo(
-    () => posts.keys.filter(key => posts.entities[key].isStarred),
-    [posts]
-  );
 
   useEffect(() => {
     const getPosts = async () => {
