@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/kindscreen-test/static/js/main.1c12d366.chunk.js",
-    "main.js.map": "/kindscreen-test/static/js/main.1c12d366.chunk.js.map",
+    "main.js": "/kindscreen-test/static/js/main.8bf6ed2e.chunk.js",
+    "main.js.map": "/kindscreen-test/static/js/main.8bf6ed2e.chunk.js.map",
     "runtime-main.js": "/kindscreen-test/static/js/runtime-main.91b4c502.js",
     "runtime-main.js.map": "/kindscreen-test/static/js/runtime-main.91b4c502.js.map",
     "static/css/2.17e5ed98.chunk.css": "/kindscreen-test/static/css/2.17e5ed98.chunk.css",
-    "static/js/2.b051df95.chunk.js": "/kindscreen-test/static/js/2.b051df95.chunk.js",
-    "static/js/2.b051df95.chunk.js.map": "/kindscreen-test/static/js/2.b051df95.chunk.js.map",
+    "static/js/2.0c4db0f8.chunk.js": "/kindscreen-test/static/js/2.0c4db0f8.chunk.js",
+    "static/js/2.0c4db0f8.chunk.js.map": "/kindscreen-test/static/js/2.0c4db0f8.chunk.js.map",
     "index.html": "/kindscreen-test/index.html",
-    "precache-manifest.dbcb9911b7db1fa89212cebf427bf0ea.js": "/kindscreen-test/precache-manifest.dbcb9911b7db1fa89212cebf427bf0ea.js",
+    "precache-manifest.066bcfaa37b5bb5ea8cd81f33b82dda5.js": "/kindscreen-test/precache-manifest.066bcfaa37b5bb5ea8cd81f33b82dda5.js",
     "service-worker.js": "/kindscreen-test/service-worker.js",
     "static/css/2.17e5ed98.chunk.css.map": "/kindscreen-test/static/css/2.17e5ed98.chunk.css.map",
-    "static/js/2.b051df95.chunk.js.LICENSE": "/kindscreen-test/static/js/2.b051df95.chunk.js.LICENSE"
+    "static/js/2.0c4db0f8.chunk.js.LICENSE": "/kindscreen-test/static/js/2.0c4db0f8.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.91b4c502.js",
     "static/css/2.17e5ed98.chunk.css",
-    "static/js/2.b051df95.chunk.js",
-    "static/js/main.1c12d366.chunk.js"
+    "static/js/2.0c4db0f8.chunk.js",
+    "static/js/main.8bf6ed2e.chunk.js"
   ]
 }
