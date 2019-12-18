@@ -27,6 +27,7 @@ const Input = styled.input`
   font-size: 0.8rem;
   background-color: transparent;
   outline: none;
+  color: white;
   &::placeholder {
     color: white;
   }

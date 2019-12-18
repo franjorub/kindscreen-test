@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Button, Row, Col } from "reactstrap";
+import { Header } from "./styles";
 import { useAuth } from "../../contexts/auth";
 import client from "../../api/client";
+import { Post } from "../../components/Post";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
-  const { loggedUser } = useAuth();
+  const { loggedUser, authUser } = useAuth();
+
+  const handleLoggout = () => {
+    authUser(null);
+  };
 
   useEffect(() => {
     const getPosts = async () => {
@@ -21,13 +27,20 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Welcome: {loggedUser.name}</h1>
+      <Header>
+        <Row>
+          <Col sm={9}>
+            <h2>Welcome: {loggedUser.name}</h2>
+          </Col>
+          <Col sm={{ size: 3 }}>
+            <Button color="danger" onClick={handleLoggout}>
+              Loggout
+            </Button>
+          </Col>
+        </Row>
+      </Header>
       {posts.map(post => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
-          <Link to={`/post/${post.id}/comments`}>View comments</Link>
-        </div>
+        <Post post={post} key={post.id} />
       ))}
     </div>
   );
