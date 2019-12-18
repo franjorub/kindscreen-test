@@ -28,7 +28,15 @@ const client = {
       const url = `${URLS.users}/${id}/posts`;
       const data = await getData(url);
 
-      return data;
+      const normalizedData = {
+        entities: data.reduce(
+          (acc, current) => ({ ...acc, [current.id]: { ...current } }),
+          {}
+        ),
+        keys: data.map(post => post.id)
+      };
+
+      return normalizedData;
     } catch (err) {
       throw err;
     }
