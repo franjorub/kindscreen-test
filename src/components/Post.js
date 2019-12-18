@@ -31,6 +31,12 @@ const CustomLink = styled(Link)`
   margin-bottom: 15px;
 `;
 
+const CustomCard = styled(Card)`
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+`;
+
 export const Post = ({ id, showStarred }) => {
   const [posts] = usePosts();
   const [starredPosts, dispatchToStarredPosts] = useStarredPosts();
@@ -54,20 +60,22 @@ export const Post = ({ id, showStarred }) => {
     <CustomContainer>
       <Row>
         <Col>
-          <Card>
+          <CustomCard>
             <CardBody>
-              <CardTitle>{post.title}</CardTitle>
+              <CardTitle>
+                <h3>{post.title}</h3>
+              </CardTitle>
               <CardText>{post.body}</CardText>
               <CustomLink to={`/post/${post.id}/comments`}>
                 View comments
               </CustomLink>
               {showStarred && (
-                <CustomButton onClick={handleStarred} color="info">
+                <CustomButton onClick={handleStarred} color="secondary" outline>
                   {post.isStarred ? "Remove from Fav." : "Add To Fav."}
                 </CustomButton>
               )}
             </CardBody>
-          </Card>
+          </CustomCard>
         </Col>
       </Row>
     </CustomContainer>

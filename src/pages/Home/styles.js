@@ -7,12 +7,11 @@ export const Header = styled(Container)`
 `;
 
 export const Main = styled.div`
-  background: linear-gradient(to bottom right, #039fd9, #7d50d5);
   padding: 0;
   margin: 0;
   min-height: 100vh;
 `;
 
 export const Welcome = styled.h2`
-  color: #e0e0e0;
+  color: #212121;
 `;
