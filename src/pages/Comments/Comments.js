@@ -16,7 +16,7 @@ export const Comments = ({ match }) => {
   return (
     <div>
       {comments.map(comment => (
-        <div>
+        <div key={comment.id}>
           <h3>{comment.name}</h3>
           <h4>{comment.email}</h4>
           <p>{comment.body}</p>
