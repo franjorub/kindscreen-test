@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Comment } from "../../components/Comment";
 import client from "../../api/client";
 
 export const Comments = ({ match }) => {
@@ -16,11 +17,7 @@ export const Comments = ({ match }) => {
   return (
     <div>
       {comments.map(comment => (
-        <div key={comment.id}>
-          <h3>{comment.name}</h3>
-          <h4>{comment.email}</h4>
-          <p>{comment.body}</p>
-        </div>
+        <Comment key={comment.id} comment={comment} />
       ))}
     </div>
   );
