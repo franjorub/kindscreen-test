@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Comments } from "./pages/Comments";
@@ -32,7 +32,7 @@ const App = () => {
   return (
     <AuthContext.Provider value={{ loggedUser, authUser }}>
       <PostsContext.Provider value={[posts, dispatchToPosts]}>
-        <Router>
+        <Router basename="/">
           <Route exact path="/" component={Login} />
           <PrivateRoute path="/welcome" component={Home} />
           <PrivateRoute path="/post/:id/comments" component={Comments} />
