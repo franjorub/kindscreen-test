@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "reactstrap";
 import { Comment } from "../../components/Comment";
 import client from "../../api/client";
 
@@ -14,10 +15,11 @@ export const Comments = ({ match }) => {
   }, [match.params.id]);
 
   return (
-    <div>
+    <Container>
+      <h3>Comments</h3>
       {comments.map(comment => (
         <Comment key={comment.id} comment={comment} />
       ))}
-    </div>
+    </Container>
   );
 };

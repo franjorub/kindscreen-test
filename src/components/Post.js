@@ -1,6 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Container, Button } from "reactstrap";
+import {
+  Row,
+  Col,
+  Container,
+  Button,
+  Card,
+  CardText,
+  CardBody,
+  CardTitle
+} from "reactstrap";
 import styled from "styled-components";
 import { usePosts } from "../contexts/posts";
 import { starredPost, unStarredPost } from "../actions/posts";
@@ -10,19 +19,15 @@ const CustomContainer = styled(Container)`
 `;
 
 const CustomButton = styled(Button)`
-  background-color: white !important;
   margin-top: 15px;
   margin-bottom: 14px;
+  margin-left: 10px;
 `;
 
 const CustomLink = styled(Link)`
-  color: white;
+  color: blue;
   margin-top: 10px;
   margin-bottom: 15px;
-`;
-
-const Title = styled.h3`
-  color: #f5f5f5;
 `;
 
 export const Post = ({ id, showStarred }) => {
@@ -42,22 +47,20 @@ export const Post = ({ id, showStarred }) => {
     <CustomContainer>
       <Row>
         <Col>
-          <Title>{post.title}</Title>
-          <p>{post.body}</p>
-          <Row>
-            <Col sm="3">
+          <Card>
+            <CardBody>
+              <CardTitle>{post.title}</CardTitle>
+              <CardText>{post.body}</CardText>
               <CustomLink to={`/post/${post.id}/comments`}>
                 View comments
               </CustomLink>
-            </Col>
-            <Col>
               {showStarred && (
-                <CustomButton onClick={handleStarred} color="link">
+                <CustomButton onClick={handleStarred} color="info">
                   {post.isStarred ? "Remove from Fav." : "Add To Fav."}
                 </CustomButton>
               )}
-            </Col>
-          </Row>
+            </CardBody>
+          </Card>
         </Col>
       </Row>
     </CustomContainer>
