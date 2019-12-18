@@ -8,7 +8,6 @@ export const Comments = ({ match }) => {
   useEffect(() => {
     const getComments = async () => {
       const comments = await client.getCommentsByPostId(match.params.id);
-      console.log(comments);
       setComments(comments);
     };
     getComments();
