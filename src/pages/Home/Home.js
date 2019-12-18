@@ -10,7 +10,7 @@ import {
   NavLink
 } from "reactstrap";
 import classnames from "classnames";
-import { Header } from "./styles";
+import { Header, Main, Welcome } from "./styles";
 import { PostList } from "../../components/PostList";
 import { useAuth } from "../../contexts/auth";
 import client from "../../api/client";
@@ -50,11 +50,11 @@ export const Home = () => {
   }, [loggedUser.id, dispatchToPosts]);
 
   return (
-    <div>
+    <Main>
       <Header>
         <Row>
           <Col sm={9}>
-            <h2>Welcome: {loggedUser.name}</h2>
+            <Welcome>Welcome: {loggedUser.name}</Welcome>
           </Col>
           <Col sm={{ size: 3 }}>
             <Button color="danger" onClick={handleLoggout}>
@@ -97,6 +97,6 @@ export const Home = () => {
           <PostList posts={starredPosts} />
         </TabPane>
       </TabContent>
-    </div>
+    </Main>
   );
 };

@@ -10,6 +10,12 @@ const UsernameInput = styled(Input)`
   text-transform: capitalize;
 `;
 
+const ButtonRow = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 36px;
+`;
+
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -57,9 +63,11 @@ export const Login = () => {
             onChange={handleEmail}
             value={email}
           />
-          <Button role="button" onClick={handleLogin}>
-            Sign In
-          </Button>
+          <ButtonRow>
+            <Button role="button" onClick={handleLogin}>
+              Sign In
+            </Button>
+          </ButtonRow>
         </Form>
       </Card>
     </Container>

@@ -21,7 +21,6 @@ export const postReducer = (state, action) => {
     case actionTypes.STARRED_POST:
       const post = { ...state.entities[action.payload] };
       post.isStarred = true;
-
       return {
         ...state,
         entities: {

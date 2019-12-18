@@ -24,7 +24,7 @@ const Input = styled.input`
   border-bottom: 1px solid white;
   box-shadow: none !important;
   margin-bottom: 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background-color: transparent;
   outline: none;
   color: white;
@@ -38,19 +38,20 @@ const Button = styled.button`
   border-radius: 6px;
   color: #49a2e1;
   font-weight: 600;
-  width: 84px;
-  height: 32px;
+
   padding-top: auto;
   padding-bottom: auto;
   text-align: center;
   margin-bottom: 1rem;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
+  padding: 12px 15px 11px 15px;
   border: none;
 `;
 
 const Logo = styled.h1`
   color: white;
   text-align: center;
+  padding-top: 86px;
 `;
 
 const Error = styled.div`
