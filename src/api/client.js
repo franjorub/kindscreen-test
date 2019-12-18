@@ -15,6 +15,14 @@ const client = {
     } catch (err) {
       throw err;
     }
+  },
+  getPostsByUserId: async id => {
+    try {
+      const response = await fetch(`${URLS.users}/${id}/posts`);
+      const data = await response.json();
+
+      return data;
+    } catch (err) {}
   }
 };
 
